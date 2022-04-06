@@ -8,11 +8,12 @@ public class PullScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
+        GetComponent<Rigidbody>().useGravity = false;
         GetComponent<Rigidbody>().freezeRotation = true;
+        GetComponent<Rigidbody>().isKinematic = true;
         this.transform.position = theDest.position;
         this.transform.parent = GameObject.Find("destino").transform;
-        GetComponent<Rigidbody>().useGravity = false;
+        
     }
 
     private void OnMouseUp()
@@ -20,5 +21,6 @@ public class PullScript : MonoBehaviour
         this.transform.parent = null;
         GetComponent<Rigidbody>().freezeRotation = false;
         GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<Rigidbody>().isKinematic = false;
     }
 }

@@ -24,8 +24,7 @@ namespace Assets.Scripts
         private void OnMouseDown()
         {
             playerController.GetHammer();
-            renderer.enabled = false;
-            transform.GetComponent<MeshCollider>().enabled = false;
+            Destroy(transform.gameObject);
         }
     }
 }

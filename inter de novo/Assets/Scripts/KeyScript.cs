@@ -22,7 +22,6 @@ public class KeyScript : MonoBehaviour
     private void OnMouseDown()
     {
         playerControler.getKey(keyNumber);
-        renderer.enabled = false;
-        transform.GetComponent<MeshCollider>().enabled = false;
+        Destroy(transform.gameObject);
     }
 }

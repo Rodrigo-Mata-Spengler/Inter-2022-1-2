@@ -24,7 +24,6 @@ public class DocScript : MonoBehaviour
     {
         sanidade.PerdeuSanidade(1);
         playerControler.getDocs(docNumber);
-        renderer.enabled = false;
-        transform.GetComponent<MeshCollider>().enabled = false;
+        Destroy(transform.gameObject);
     }
 }

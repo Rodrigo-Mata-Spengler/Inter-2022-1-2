@@ -8,10 +8,11 @@ public class PullScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GetComponent<Rigidbody>().useGravity = false;
+        
         GetComponent<Rigidbody>().freezeRotation = true;
         this.transform.position = theDest.position;
         this.transform.parent = GameObject.Find("destino").transform;
+        GetComponent<Rigidbody>().useGravity = false;
     }
 
     private void OnMouseUp()

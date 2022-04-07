@@ -5,6 +5,17 @@ using UnityEngine;
 public class PullScript : MonoBehaviour
 {
     [SerializeField]private Transform theDest;
+    private Renderer render;
+
+    private void Start()
+    {
+        render = transform.GetComponent<MeshRenderer>();
+    }
+
+    private void OnMouseEnter()
+    {
+        render.material.color = Color.blue;
+    }
 
     private void OnMouseDown()
     {

@@ -27,8 +27,8 @@ public class PauseScript : MonoBehaviour
         }
         else if (Input.GetKeyDown(botao) && isActive)
         {
-            VoltarAoJogo();
             PrenderMouse();
+            VoltarAoJogo();
         }
     }
 

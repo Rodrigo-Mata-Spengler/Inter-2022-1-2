@@ -9,7 +9,7 @@ public class DialogueManeger : MonoBehaviour
 
     [SerializeField] private AudioClip[] falas;
 
-    [SerializeField] private KeyCode keyToPress = KeyCode.Return;
+    //[SerializeField] private KeyCode keyToPress = KeyCode.Return;
 
     [SerializeField] private Text caixadeTexto;
 

@@ -23,7 +23,7 @@ public class CasaFantasma : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.E) || aparecer)
+        if (aparecer)
         {
             currentNumber = Mathf.Lerp(currentNumber, targetNumeber, tempo * Time.deltaTime);
 

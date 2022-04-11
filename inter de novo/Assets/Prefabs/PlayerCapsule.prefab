@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 364075823}
   - component: {fileID: 364075824}
   - component: {fileID: 364075825}
+  - component: {fileID: 529787091419370638}
   m_Layer: 8
   m_Name: PlayerManeger
   m_TagString: Untagged
@@ -78,7 +79,6 @@ MonoBehaviour:
   falasTexto:
   - teste 123
   falas: []
-  keyToPress: 13
   caixadeTexto: {fileID: 0}
   legendas: 0
 --- !u!114 &364075825
@@ -97,6 +97,20 @@ MonoBehaviour:
   vidaAtual: 0
   semSanidade: 0
   barra: {fileID: 0}
+--- !u!114 &529787091419370638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364075820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c93311b6be418468fc1aefab7d1c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menupause: {fileID: 0}
+  botao: 27
 --- !u!1 &2081033289
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081033289}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.51, z: 2.6599731}
+  m_LocalPosition: {x: 0, y: 0.68, z: 1.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8997996947095583982}
@@ -336,7 +350,7 @@ MonoBehaviour:
   GroundedRadius: 0.5
   GroundLayers:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 129
   CinemachineCameraTarget: {fileID: 4135013735270702863}
   TopClamp: 89
   BottomClamp: -89

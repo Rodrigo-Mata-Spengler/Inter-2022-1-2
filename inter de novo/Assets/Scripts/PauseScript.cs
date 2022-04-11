@@ -42,6 +42,7 @@ public class PauseScript : MonoBehaviour
         menupause.SetActive(false);
         Time.timeScale = 1;
         isActive = false;
+        PrenderMouse();
     }
     
     private void SoltarMouse()

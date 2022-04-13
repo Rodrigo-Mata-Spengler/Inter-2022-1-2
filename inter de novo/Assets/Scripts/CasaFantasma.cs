@@ -8,6 +8,7 @@ public class CasaFantasma : MonoBehaviour
     [SerializeField] private float tempo = 6f;
     [SerializeField] private bool aparecer = false;
     [SerializeField] private Collider[] colisão;
+    [SerializeField] private GameObject[] rend;
     
     private float targetNumeber = -1f;
     private float currentNumber = 1f;
@@ -20,17 +21,25 @@ public class CasaFantasma : MonoBehaviour
         {
             co.enabled = false;
         }
+        foreach (GameObject re in rend)
+        {
+            re.active = false;
+        }
     }
     private void Update()
     {
-        if (aparecer)
+        if (Input.GetKey(KeyCode.E) || aparecer)
         {
             currentNumber = Mathf.Lerp(currentNumber, targetNumeber, tempo * Time.deltaTime);
 
             
             material.SetFloat("Vector1_ddf766dbd6de4da5a5ae03cb28863705", currentNumber);
             aparecer = true;
-            if(currentNumber <= -0.5)
+            foreach (GameObject re in rend)
+            {
+                re.active = true;
+            }
+            if ( currentNumber <= -0.5)
             {
                 foreach (Collider co in colisão)
                 {

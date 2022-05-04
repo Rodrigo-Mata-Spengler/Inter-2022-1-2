@@ -17,36 +17,52 @@ public class DialogueManeger : MonoBehaviour
 
     [SerializeField] private bool legendas;
 
+    private int falaAtual;
+
+    private int dialogoatual;
+    
     private void Start()
     {
         //this.painelDeTexto.SetActive(false);
+
+        falaAtual = 0;
+        dialogoatual = 0;
     }
     
-    public void PlayNarrative(int tocar)
+    public void PlayNarrative(string[] a)
     {
-        FalasTextoInicio(tocar);
-        StartCoroutine(TesteNum1());
+        falasTexto = a;
+        FalasTextoInicio();
+        StartCoroutine(Tempo());
     }
 
-    private void FalasTextoInicio(int a)
+    private void FalasTextoInicio()
     {
         //this.painelDeTexto.SetActive(true);
-        this.caixadeTexto.text = falasTexto[a];
+        this.caixadeTexto.text = falasTexto[falaAtual];
 
     }
-
-    private void FalasTextoFim()
+    private void ProximaFala()
     {
-        //this.painelDeTexto.SetActive(false);
-        this.caixadeTexto.text = "";
+        falaAtual++;
+
+        if (falaAtual == falasTexto.Length)
+        {
+            this.caixadeTexto.text = "";
+            falaAtual = 0;
+        }
+        else
+        {
+            FalasTextoInicio();
+            StartCoroutine(Tempo());
+        }
 
     }
-
-     IEnumerator TesteNum1()
+     IEnumerator Tempo()
     {
         yield return new WaitForSecondsRealtime(10f);
 
-        this.caixadeTexto.text = "";
-    }
+        ProximaFala();
+}
 
 }

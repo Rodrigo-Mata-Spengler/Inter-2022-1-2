@@ -7,6 +7,7 @@ public class Mochila : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
     [SerializeField] private KeyCode botao = KeyCode.E;
+    [SerializeField] private ScriptMochila mochila;
 
     private bool isActive;
 
@@ -23,6 +24,7 @@ public class Mochila : MonoBehaviour
             panel.active = true;
             isActive = true;
             SoltarMouse();
+            mochila.UpdateInventory();
         }else if (Input.GetKeyDown(botao) && isActive)
         {
             panel.active = false;

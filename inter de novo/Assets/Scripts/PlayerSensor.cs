@@ -8,13 +8,11 @@ public class PlayerSensor : MonoBehaviour
 
     [SerializeField] private int numFalas;
 
-    private Renderer renderer;
+    [SerializeField] private string[] falas;
 
     private bool doOnce;
-
     private void Start()
     {
-        renderer = transform.GetComponent<MeshRenderer>();
         doOnce = true;
 
     }
@@ -23,9 +21,9 @@ public class PlayerSensor : MonoBehaviour
     {
         if (other.transform.CompareTag("Player") && doOnce)
         {
-            player.GetComponent<DialogueManeger>().PlayNarrative(this.numFalas);
-            renderer.material.color = Color.green;
+            player.GetComponent<DialogueManeger>().PlayNarrative(falas);
             doOnce = false;
+            Destroy(transform);
         }
     }
 }

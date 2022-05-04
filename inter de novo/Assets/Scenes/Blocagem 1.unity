@@ -8550,6 +8550,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 364075820, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 364075822, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: camera
       value: 
@@ -8566,10 +8570,30 @@ PrefabInstance:
       propertyPath: barra
       value: 
       objectReference: {fileID: 93291052}
+    - target: {fileID: 2081033289, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 529787091419370638, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: menupause
       value: 
       objectReference: {fileID: 1264630183}
+    - target: {fileID: 4135013735270702863, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393215578589016642, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393215578589016655, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393215578589016655, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b911390c5825014e8377183a7837d3f, type: 2}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: RotationSpeed
       value: 2
@@ -8577,6 +8601,10 @@ PrefabInstance:
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_RootOrder
@@ -11548,6 +11576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 296331630}
   botao: 101
+  mochila: {fileID: 2076405572}
 --- !u!4 &1549578670
 Transform:
   m_ObjectHideFlags: 0
@@ -15446,6 +15475,36 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 364075820, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
   m_PrefabInstance: {fileID: 1093702927}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2076405572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076405571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6b73a169fd4e14bb20ccb540d24e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  docSlots:
+  - {fileID: 310004714}
+  - {fileID: 2137162936}
+  - {fileID: 493622341}
+  - {fileID: 1548575771}
+  - {fileID: 1138989405}
+  - {fileID: 829918447}
+  - {fileID: 430125927}
+  - {fileID: 1894400481}
+  - {fileID: 406283212}
+  - {fileID: 132770217}
+  - {fileID: 1355799335}
+  - {fileID: 75617524}
+  - {fileID: 318526524}
+  - {fileID: 1378272919}
+  - {fileID: 1423206141}
+  - {fileID: 1657407375}
+  inventario: {fileID: 2076405575}
 --- !u!114 &2076405573 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 364075825, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}

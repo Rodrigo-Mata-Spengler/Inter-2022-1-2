@@ -63,4 +63,9 @@ public class PlayerInventory : MonoBehaviour
     {
         return this.hasLupa;
     }
+
+    public bool[] HaveDocs()
+    {
+        return docs;
+    }
 }

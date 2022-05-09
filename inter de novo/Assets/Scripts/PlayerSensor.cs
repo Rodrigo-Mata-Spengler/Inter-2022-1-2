@@ -6,8 +6,6 @@ public class PlayerSensor : MonoBehaviour
 {
     [SerializeField] private GameObject player;
 
-    [SerializeField] private int numFalas;
-
     [SerializeField] private string[] falas;
 
     private bool doOnce;
@@ -23,7 +21,7 @@ public class PlayerSensor : MonoBehaviour
         {
             player.GetComponent<DialogueManeger>().PlayNarrative(falas);
             doOnce = false;
-            Destroy(transform);
+            Destroy(transform.gameObject);
         }
     }
 }

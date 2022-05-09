@@ -9,13 +9,18 @@ public class CasaFantasma : MonoBehaviour
     [SerializeField] private bool aparecer = false;
     [SerializeField] private Collider[] colisão;
     [SerializeField] private GameObject[] rend;
+    [SerializeField] private GameObject Luz;
     
     private float targetNumeber = -1f;
     private float currentNumber = 1f;
 
+    private float luztargetNumeber = 35f;
+    private float luzcurrentNumber = 0f;
+
     private void Start()
     {        
          material.SetFloat("Vector1_ddf766dbd6de4da5a5ae03cb28863705", 1);
+        material.SetFloat("Boolean_f8cb18f941d444d7af7e8748be9c3d8f", 0);
 
         foreach (Collider co in colisão)
         {
@@ -25,6 +30,8 @@ public class CasaFantasma : MonoBehaviour
         {
             re.active = false;
         }
+
+        Luz.active = false;
     }
     private void Update()
     {
@@ -32,9 +39,13 @@ public class CasaFantasma : MonoBehaviour
         {
             currentNumber = Mathf.Lerp(currentNumber, targetNumeber, tempo * Time.deltaTime);
 
+            luzcurrentNumber = Mathf.Lerp(luzcurrentNumber, luztargetNumeber, tempo * Time.deltaTime);
+            Luz.active = true;
             
             material.SetFloat("Vector1_ddf766dbd6de4da5a5ae03cb28863705", currentNumber);
             aparecer = true;
+
+            Luz.GetComponent<Light>().intensity = luzcurrentNumber;
             foreach (GameObject re in rend)
             {
                 re.active = true;

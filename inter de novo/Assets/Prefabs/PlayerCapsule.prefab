@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 364075824}
   - component: {fileID: 364075825}
   - component: {fileID: 529787091419370638}
-  m_Layer: 8
+  - component: {fileID: 2076405572}
+  m_Layer: 9
   m_Name: PlayerManeger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,8 +63,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasLupa: 0
   hasHammer: 0
-  keys: 00
-  docs: 00
+  keys: 00000000
+  docs: 00000000000000000000000000000000
 --- !u!114 &364075824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +81,7 @@ MonoBehaviour:
   - teste 123
   falas: []
   caixadeTexto: {fileID: 0}
-  legendas: 0
+  legendas: 1
 --- !u!114 &364075825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +112,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menupause: {fileID: 0}
   botao: 27
+--- !u!114 &2076405572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364075820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6b73a169fd4e14bb20ccb540d24e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  docSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  inventario: {fileID: 364075823}
 --- !u!1 &2081033289
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2081033290}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: destino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4135013735270702856}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerCameraRoot
   m_TagString: CinemachineTarget
   m_Icon: {fileID: 0}
@@ -183,7 +214,7 @@ GameObject:
   - component: {fileID: 5393215578589016654}
   - component: {fileID: 5393215578589016655}
   - component: {fileID: 5393215578589016640}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,8 +312,7 @@ GameObject:
   - component: {fileID: 1978471637655604388}
   - component: {fileID: 5420857361349278248}
   - component: {fileID: 8616685848737228376}
-  - component: {fileID: 83889631}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: PlayerCapsule
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -339,7 +369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 4
   SprintSpeed: 6
-  RotationSpeed: 1
+  RotationSpeed: 2
   SpeedChangeRate: 10
   JumpHeight: 1.2
   Gravity: -15
@@ -368,7 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   canPush: 1
   strength: 1.1
 --- !u!114 &5420857361349278248
@@ -488,19 +518,3 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!54 &83889631
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616685848737228372}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0

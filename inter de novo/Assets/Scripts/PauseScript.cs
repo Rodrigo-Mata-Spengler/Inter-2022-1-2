@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
     [SerializeField] private GameObject menupause;
     [SerializeField] private KeyCode botao = KeyCode.Escape;
     private bool isActive = false;
+
+    private Scene scena;
 
     private void Start()
     {
@@ -45,15 +48,22 @@ public class PauseScript : MonoBehaviour
         PrenderMouse();
     }
     
-    private void SoltarMouse()
+    public void SoltarMouse()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
-    private void PrenderMouse()
+    public void PrenderMouse()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Time.timeScale = 1;
+    }
+
+    public void Recarregar()
+    {
+        scena = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scena.name);
     }
 }

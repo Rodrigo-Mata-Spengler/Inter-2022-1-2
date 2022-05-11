@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSensor : MonoBehaviour
+public class EventSensor : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
-
-    [SerializeField] private string[] falas;
+    [SerializeField] private SalaEnterrada sala;
+    [SerializeField] private bool opcao = false;
 
     private bool doOnce;
     private void Start()
@@ -19,7 +18,14 @@ public class PlayerSensor : MonoBehaviour
     {
         if (other.transform.CompareTag("Player") && doOnce)
         {
-            player.GetComponent<DialogueManeger>().PlayNarrative(falas,false);
+            if (opcao)
+            {
+                sala.AtivarLuz();
+            }
+            else
+            {
+                sala.AtivarGravidade();
+            }
             doOnce = false;
             Destroy(transform.gameObject);
         }

@@ -12,6 +12,7 @@ public class SanidadeScrip : MonoBehaviour
 
     [SerializeField] private BarraDeSanidade barra;
 
+    [SerializeField]private GameProgrecao prog;
     private void Start()
     {
         this.vidaAtual = vidaMax;
@@ -30,16 +31,19 @@ public class SanidadeScrip : MonoBehaviour
 
     public void PerdeuSanidade(int a)
     {
-        if((vidaAtual -= a )<= 0)
+        if((vidaAtual - a )<= 0)
         {
+            vidaAtual -= a;
             this.semSanidade = true;
             barra.PerdeuVida(0);
+            prog.EventoProg();
         }
         else
         {
             vidaAtual -= a;
 
             barra.PerdeuVida(vidaAtual);
+            prog.EventoProg();
         }
     }
 

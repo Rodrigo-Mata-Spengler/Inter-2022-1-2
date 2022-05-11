@@ -18,20 +18,8 @@ public class CasaFantasma : MonoBehaviour
     private float luzcurrentNumber = 0f;
 
     private void Start()
-    {        
-         material.SetFloat("Vector1_ddf766dbd6de4da5a5ae03cb28863705", 1);
-        material.SetFloat("Boolean_f8cb18f941d444d7af7e8748be9c3d8f", 0);
-
-        foreach (Collider co in colisão)
-        {
-            co.enabled = false;
-        }
-        foreach (GameObject re in rend)
-        {
-            re.active = false;
-        }
-
-        Luz.active = false;
+    {
+        CasaFantasmaReset();
     }
     private void Update()
     {
@@ -67,5 +55,22 @@ public class CasaFantasma : MonoBehaviour
     public void CasaFantasmaAparecer()
     {
         aparecer = !aparecer;
+    }
+
+    public void CasaFantasmaReset()
+    {
+        material.SetFloat("Vector1_ddf766dbd6de4da5a5ae03cb28863705", 1);
+        material.SetFloat("Boolean_f8cb18f941d444d7af7e8748be9c3d8f", 0);
+
+        foreach (Collider co in colisão)
+        {
+            co.enabled = false;
+        }
+        foreach (GameObject re in rend)
+        {
+            re.active = false;
+        }
+
+        Luz.active = false;
     }
 }

@@ -17,9 +17,17 @@ public class DialogueManeger : MonoBehaviour
 
     [SerializeField] private bool legendas;
 
+    [SerializeField] private GameObject fim;
+
     private int falaAtual;
 
     private int dialogoatual;
+
+    private bool fimJogo = false;
+
+    private bool trig = false;
+
+    private PauseScript pause = new PauseScript();
     
     private void Start()
     {
@@ -27,13 +35,15 @@ public class DialogueManeger : MonoBehaviour
 
         falaAtual = 0;
         dialogoatual = 0;
+        fim.SetActive(true);
     }
     
-    public void PlayNarrative(string[] a)
+    public void PlayNarrative(string[] a,bool b)
     {
         falasTexto = a;
         FalasTextoInicio();
         StartCoroutine(Tempo());
+        fimJogo = b;
     }
 
     private void FalasTextoInicio()
@@ -50,19 +60,38 @@ public class DialogueManeger : MonoBehaviour
         {
             this.caixadeTexto.text = "";
             falaAtual = 0;
+            if (fimJogo)
+            {
+                TelaFim();
+            }
         }
         else
         {
             FalasTextoInicio();
             StartCoroutine(Tempo());
         }
-
+        
     }
      IEnumerator Tempo()
     {
         yield return new WaitForSecondsRealtime(10f);
 
         ProximaFala();
-}
+    }
+    private void Update()
+    {
+        if (trig)
+        {
+            fim.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(fim.GetComponent<CanvasGroup>().alpha,1,0.5f);
+        }
+    }
 
+    private void TelaFim()
+    {
+        fim.SetActive(true);
+        trig = true;
+
+        Time.timeScale = 0;
+        pause.SoltarMouse();
+    }
 }

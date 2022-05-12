@@ -12912,7 +12912,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8926099201566631242, guid: 9c63bb6592d5f8b4baad7d26f3a79b47, type: 3}
       propertyPath: m_Range
-      value: 7
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8926099201566631242, guid: 9c63bb6592d5f8b4baad7d26f3a79b47, type: 3}
       propertyPath: m_Lightmapping

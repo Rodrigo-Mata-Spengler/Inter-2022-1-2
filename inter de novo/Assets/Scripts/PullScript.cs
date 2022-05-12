@@ -5,6 +5,7 @@ using UnityEngine;
 public class PullScript : MonoBehaviour
 {
     [SerializeField]private Transform theDest;
+    [SerializeField] private Color cor = Color.cyan;
     private Renderer render;
 
     private void Start()
@@ -14,7 +15,7 @@ public class PullScript : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        render.material.color = Color.blue;
+        render.material.color = cor;
     }
 
     private void OnMouseDown()

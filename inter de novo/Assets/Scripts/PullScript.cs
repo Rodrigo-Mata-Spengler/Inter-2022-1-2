@@ -8,16 +8,6 @@ public class PullScript : MonoBehaviour
     [SerializeField] private Color cor = Color.cyan;
     private Renderer render;
 
-    private void Start()
-    {
-        render = transform.GetComponent<MeshRenderer>();
-    }
-
-    private void OnMouseEnter()
-    {
-        render.material.color = cor;
-    }
-
     private void OnMouseDown()
     {
         GetComponent<Rigidbody>().useGravity = false;

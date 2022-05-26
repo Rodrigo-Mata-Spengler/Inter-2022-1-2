@@ -17,9 +17,9 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 941
+    x: 942
     y: -190
-    width: 426
+    width: 425
     height: 1823
 --- !u!114 &114350483966674976
 MonoBehaviour:
@@ -671,7 +671,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 300
+      m_SerializableObject: 200
     m_Space: 2147483647
   m_Property:
     name: Lifetime
@@ -1343,7 +1343,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: -0.7
+      m_SerializableObject: -0.87
     m_Space: 2147483647
   m_Property:
     name: Alpha

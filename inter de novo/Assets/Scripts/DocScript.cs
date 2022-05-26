@@ -13,16 +13,6 @@ public class DocScript : MonoBehaviour
 
     private new Renderer renderer;
 
-    private void Start()
-    {
-        renderer = transform.GetComponent<MeshRenderer>();
-    }
-
-    private void OnMouseEnter()
-    {
-        renderer.material.color = Color.red;
-    }
-
     private void OnMouseDown()
     {
         sanidade.PerdeuSanidade(1);

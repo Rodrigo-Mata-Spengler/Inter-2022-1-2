@@ -32,7 +32,7 @@ public class GameProgrecao : MonoBehaviour
 
         switch (vidaAtual)
         {
-            case 2:
+            case 3:
                 CasaAparecer();
                 break;
             case 0:

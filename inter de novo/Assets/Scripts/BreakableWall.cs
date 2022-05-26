@@ -14,13 +14,7 @@ public class BreakableWall : MonoBehaviour
 
     private void Start()
     {
-        renderer = transform.GetComponent<MeshRenderer>();
         vida = vidatotal;
-    }
-
-    private void OnMouseEnter()
-    {
-        renderer.material.color = Color.green;
     }
 
     private void OnMouseDown()
@@ -29,18 +23,14 @@ public class BreakableWall : MonoBehaviour
         {
             if(vida == vidatotal)
             {
-                renderer.material.color = Color.yellow;
                 this.vida -= 1;
             }
             else if (vida == 2)
             {
-                renderer.material.color = Color.red;
                 this.vida -= 1;
-
             }
             else if (vidatotal == 0)
             {
-                renderer.material.color = Color.red;
                 this.vida -= 1;
             }
             else

@@ -15,7 +15,6 @@ public class DoorLock : MonoBehaviour
 
     void Start()
     {
-        renderer = transform.GetChild(0).GetComponent<MeshRenderer>();
         hinge = GetComponent<HingeJoint>();
 
         doorlimits = hinge.limits;
@@ -26,16 +25,10 @@ public class DoorLock : MonoBehaviour
         hinge.limits = doorlimits;
     }
 
-    private void OnMouseEnter()
-    {
-        renderer.material.color = Color.green;
-    }
-
     private void OnMouseDown()
     {
         if (playerControler.GetComponent<PlayerInventory>().HaveKeys(doorNumber))
         {
-            renderer.material.color = Color.red;
             doorlimits.max = 90;
             doorlimits.min = -90;
             hinge.limits = doorlimits;

@@ -8,18 +8,21 @@ public class ScriptTrem : MonoBehaviour
     [SerializeField] private float speed=2;
     [SerializeField] private Animator desanima;
 
-    private bool acelerar = false;
+    private bool doOnce = true;
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void Start()
     {
-        if (collision.transform.CompareTag("Trigger"))
+        doOnce = true;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("colidiu aqui");
+        if (other.transform.CompareTag("Player") && doOnce)
         {
             Acelerar();
-            Debug.Log("entrei aaaaa");
-        }    
+            doOnce = false;
+        }
     }
-
     private void Acelerar()
     {
         desanima.SetTrigger("trem_move");

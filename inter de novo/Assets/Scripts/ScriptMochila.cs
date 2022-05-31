@@ -8,9 +8,16 @@ public class ScriptMochila : MonoBehaviour
 
     [SerializeField] private GameObject[] docSlots;
 
+    [SerializeField] private GameObject[] keySlots;
+
     private void Start()
     {
         foreach (GameObject item in docSlots)
+        {
+            item.SetActive(false);
+        }
+
+        foreach (GameObject item in keySlots)
         {
             item.SetActive(false);
         }
@@ -22,6 +29,14 @@ public class ScriptMochila : MonoBehaviour
             if (inventario.HaveDocs(i))
             {
                 docSlots[i].SetActive(true);
+            }
+        }
+
+        for (int i = 0; i < keySlots.Length; i++)
+        {
+            if (inventario.HaveKeys(i))
+            {
+                keySlots[i].SetActive(true);
             }
         }
     }

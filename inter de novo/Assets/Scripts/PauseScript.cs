@@ -9,12 +9,15 @@ public class PauseScript : MonoBehaviour
 {
     [SerializeField] private GameObject menupause;
     [SerializeField] private KeyCode botao = KeyCode.Escape;
+
+    [SerializeField] private GameObject opções;
     private bool isActive = false;
 
     private Scene scena;
 
     private void Start()
     {
+        opções.SetActive(false);
         menupause.SetActive(false);
     }
 
@@ -45,6 +48,16 @@ public class PauseScript : MonoBehaviour
         Time.timeScale = 1;
         isActive = false;
         PrenderMouse();
+    }
+
+    public void MenuOpcao()
+    {
+        opções.SetActive(true);
+    }
+
+    public void Voltar()
+    {
+        opções.SetActive(false);
     }
     
     public void SoltarMouse()

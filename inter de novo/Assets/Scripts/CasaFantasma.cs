@@ -10,6 +10,8 @@ public class CasaFantasma : MonoBehaviour
     [SerializeField] private Collider[] colisão;
     [SerializeField] private GameObject[] rend;
     [SerializeField] private GameObject Luz;
+
+    [SerializeField] private GameObject animador;
     
     private float targetNumeber = -1f;
     private float currentNumber = 1f;
@@ -38,6 +40,7 @@ public class CasaFantasma : MonoBehaviour
             {
                 re.active = true;
             }
+            animador.SetActive(true);
             if ( currentNumber <= -0.5)
             {
                 foreach (Collider co in colisão)
@@ -72,5 +75,7 @@ public class CasaFantasma : MonoBehaviour
         }
 
         Luz.active = false;
+
+        animador.SetActive(false);
     }
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ScriptMochila : MonoBehaviour
 {
-    [SerializeField] private GameObject[] docSlots;
-
     [SerializeField] private PlayerInventory inventario;
+
+    [SerializeField] private GameObject[] docSlots;
 
     private void Start()
     {

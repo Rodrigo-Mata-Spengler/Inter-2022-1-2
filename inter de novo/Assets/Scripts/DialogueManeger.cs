@@ -12,6 +12,7 @@ public class DialogueManeger : MonoBehaviour
     //[SerializeField] private KeyCode keyToPress = KeyCode.Return;
 
     [SerializeField] private Text caixadeTexto;
+    [SerializeField] private GameObject caixadeTextoImagem;
 
     //[SerializeField] private GameObject painelDeTexto;
 
@@ -33,6 +34,7 @@ public class DialogueManeger : MonoBehaviour
     {
         //this.painelDeTexto.SetActive(false);
 
+        caixadeTextoImagem.SetActive(false);
         falaAtual = 0;
         dialogoatual = 0;
         fim.SetActive(true);
@@ -40,6 +42,7 @@ public class DialogueManeger : MonoBehaviour
     
     public void PlayNarrative(string[] a,bool b)
     {
+        caixadeTextoImagem.SetActive(true);
         falasTexto = a;
         FalasTextoInicio();
         StartCoroutine(Tempo());
@@ -64,6 +67,7 @@ public class DialogueManeger : MonoBehaviour
             {
                 TelaFim();
             }
+            caixadeTextoImagem.SetActive(false);
         }
         else
         {

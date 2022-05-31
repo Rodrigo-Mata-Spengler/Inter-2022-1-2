@@ -26,7 +26,6 @@ public class PauseScript : MonoBehaviour
             Time.timeScale = 0;
             SoltarMouse();
             isActive = true;
-            Debug.Log("entrou !!");
         }
         else if (Input.GetKeyDown(botao) && isActive)
         {

@@ -9,12 +9,14 @@ public class StartMenu : MonoBehaviour
     [SerializeField] private GameObject menuInicial;
     [SerializeField] private GameObject menuCreditos;
     [SerializeField] private GameObject menuAjustes;
+    [SerializeField] private GameObject menuComoJogar;
 
     private void Start()
     {
         menuInicial.SetActive(true);
         menuCreditos.SetActive(false);
         menuAjustes.SetActive(false);
+        menuComoJogar.SetActive(false);
     }
     public void FecharJogo()
     {
@@ -45,11 +47,22 @@ public class StartMenu : MonoBehaviour
             menuAjustes.SetActive(false);
             menuInicial.SetActive(true);
         }
+        else if (menuComoJogar.active)
+        {
+            menuComoJogar.SetActive(false);
+            menuInicial.SetActive(true);
+        }
     }
 
     public void Ajustes()
     {
         menuInicial.SetActive(false);
         menuAjustes.SetActive(true);
+    }
+
+    public void ComoJogar()
+    {
+        menuInicial.SetActive(false);
+        menuComoJogar.SetActive(true);
     }
 }

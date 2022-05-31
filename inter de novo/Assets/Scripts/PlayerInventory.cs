@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    [SerializeField] public bool hasLupa;
     [SerializeField] private bool hasHammer;
     [SerializeField] private bool[] keys;
     [SerializeField] private bool[] docs;
@@ -52,16 +51,6 @@ public class PlayerInventory : MonoBehaviour
     public bool HaveDocs(int a)
     {
         return docs[a];
-    }
-
-    public void GetLupa()
-    {
-        this.hasLupa = true;
-    }
-
-    public bool Haslupa()
-    {
-        return this.hasLupa;
     }
 
     public bool[] HaveDocs()

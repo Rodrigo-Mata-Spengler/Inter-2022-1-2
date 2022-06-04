@@ -32,6 +32,13 @@ public class PlayerInventory : MonoBehaviour
     {
         keys[a] = true;
     }
+    public void HaveAllKeys()
+    {
+        for (int i = 0; i < keys.Length; i++)
+        {
+            keys[i] = true;
+        }
+    }
 
     public void GetHammer()
     {
@@ -57,4 +64,13 @@ public class PlayerInventory : MonoBehaviour
     {
         return docs;
     }
+
+    public void HaveAllDocs()
+    {
+        for (int i = 0; i < docs.Length; i++)
+        {
+            docs[i] = true;
+        }
+    }
+
 }

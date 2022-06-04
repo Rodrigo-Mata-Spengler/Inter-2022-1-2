@@ -78,7 +78,7 @@ public class DialogueManeger : MonoBehaviour
     }
      IEnumerator Tempo()
     {
-        yield return new WaitForSecondsRealtime(10f);
+        yield return new WaitForSecondsRealtime(5f);
 
         ProximaFala();
     }

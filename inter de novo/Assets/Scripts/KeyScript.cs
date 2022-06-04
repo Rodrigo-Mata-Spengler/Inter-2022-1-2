@@ -6,6 +6,8 @@ public class KeyScript : MonoBehaviour
 {
     [SerializeField] private PlayerInventory playerControler;
     [SerializeField] private int keyNumber;
+    [SerializeField] private AudioClip clip;
+    [SerializeField] private AudioSource source;
 
     private new Renderer renderer;
 
@@ -23,5 +25,6 @@ public class KeyScript : MonoBehaviour
     {
         playerControler.getKey(keyNumber);
         Destroy(transform.gameObject);
+        source.PlayOneShot(clip);
     }
 }

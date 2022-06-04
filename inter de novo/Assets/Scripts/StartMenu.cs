@@ -27,7 +27,7 @@ public class StartMenu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        SceneManager.LoadScene("Blocagem 1");
+        SceneManager.LoadScene("Animação");
     }
 
     public void Creditos()

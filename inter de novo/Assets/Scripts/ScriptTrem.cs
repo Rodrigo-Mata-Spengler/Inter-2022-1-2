@@ -8,6 +8,9 @@ public class ScriptTrem : MonoBehaviour
     [SerializeField] private float speed=2;
     [SerializeField] private Animator desanima;
 
+    [SerializeField] private AudioClip clip;
+    [SerializeField] private AudioSource sorce;
+
     private bool doOnce = true;
 
     private void Start()
@@ -26,5 +29,6 @@ public class ScriptTrem : MonoBehaviour
     private void Acelerar()
     {
         desanima.SetTrigger("trem_move");
+        sorce.PlayOneShot(clip);
     }
 }

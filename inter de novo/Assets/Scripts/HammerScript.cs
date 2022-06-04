@@ -8,6 +8,8 @@ namespace Assets.Scripts
     public class HammerScript : MonoBehaviour
     {
         [SerializeField] private PlayerInventory playerController;
+        [SerializeField] private DialogueManeger dig;
+        [SerializeField] private string[] falas;
 
         private new Renderer renderer;
 
@@ -24,6 +26,7 @@ namespace Assets.Scripts
         private void OnMouseDown()
         {
             playerController.GetHammer();
+            dig.PlayNarrative(falas, false);
             Destroy(transform.gameObject);
         }
     }

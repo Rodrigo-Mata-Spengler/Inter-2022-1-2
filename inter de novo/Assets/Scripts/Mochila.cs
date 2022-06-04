@@ -25,11 +25,14 @@ public class Mochila : MonoBehaviour
             isActive = true;
             SoltarMouse();
             mochila.UpdateInventory();
-        }else if (Input.GetKeyDown(botao) && isActive)
+            Time.timeScale = 0;
+        }
+        else if (Input.GetKeyDown(botao) && isActive)
         {
             panel.active = false;
             PrenderMouse();
             isActive = false;
+            Time.timeScale = 1;
         }
     }
     private void SoltarMouse()

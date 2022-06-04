@@ -78,4 +78,9 @@ public class PauseScript : MonoBehaviour
         scena = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scena.name);
     }
+
+    public void GoStartMenu()
+    {
+        SceneManager.LoadScene("Start Menu");
+    }
 }

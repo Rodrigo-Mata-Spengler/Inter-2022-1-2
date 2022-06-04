@@ -12,6 +12,8 @@ public class HoverTipManager : MonoBehaviour
     public static Action<string, Vector2> OnMouseHover;
     public static Action OnMouseLoseFocus;
 
+    [SerializeField] private float margem = 1.2f;
+
     private void OnEnable()
     {
         OnMouseHover += ShowTip;
@@ -32,7 +34,7 @@ public class HoverTipManager : MonoBehaviour
     private void ShowTip(string tip, Vector2 mousePos)
     {
         tipText.text = tip;
-        tipWindow.sizeDelta = new Vector2(tipText.preferredWidth > 200 ? 200 : tipText.preferredWidth, tipText.preferredHeight);
+        tipWindow.sizeDelta = new Vector2(tipText.preferredWidth > 200 ? 200 : tipText.preferredWidth, tipText.preferredHeight * margem);
 
         tipWindow.gameObject.SetActive(true);
         tipWindow.transform.position = new Vector2(mousePos.x + tipWindow.sizeDelta.x , mousePos.y);

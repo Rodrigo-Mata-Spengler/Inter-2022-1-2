@@ -27,31 +27,7 @@ public class CasaFantasma : MonoBehaviour
     {
         if (aparecer)
         {
-            currentNumber = Mathf.Lerp(currentNumber, targetNumeber, tempo * Time.deltaTime);
-
-            luzcurrentNumber = Mathf.Lerp(luzcurrentNumber, luztargetNumeber, tempo * Time.deltaTime);
-            Luz.active = true;
-            
-            material.SetFloat("Vector1_ddf766dbd6de4da5a5ae03cb28863705", currentNumber);
-            aparecer = true;
-
-            Luz.GetComponent<Light>().intensity = luzcurrentNumber;
-            foreach (GameObject re in rend)
-            {
-                re.active = true;
-            }
-            animador.SetActive(true);
-            if ( currentNumber <= -0.5)
-            {
-                foreach (Collider co in colisão)
-                {
-                    co.enabled = true;
-                }
-                if (currentNumber <= -0.99) {
-                    aparecer = false;
-                    material.SetFloat("Boolean_f8cb18f941d444d7af7e8748be9c3d8f", 1);
-                }
-            }
+            CasaFantasmaPlay();
         }
     }
 
@@ -77,5 +53,35 @@ public class CasaFantasma : MonoBehaviour
         Luz.active = false;
 
         animador.SetActive(false);
+    }
+
+    public void CasaFantasmaPlay()
+    {
+        currentNumber = Mathf.Lerp(currentNumber, targetNumeber, tempo * Time.deltaTime);
+
+        luzcurrentNumber = Mathf.Lerp(luzcurrentNumber, luztargetNumeber, tempo * Time.deltaTime);
+        Luz.active = true;
+
+        material.SetFloat("Vector1_ddf766dbd6de4da5a5ae03cb28863705", currentNumber);
+        aparecer = true;
+
+        Luz.GetComponent<Light>().intensity = luzcurrentNumber;
+        foreach (GameObject re in rend)
+        {
+            re.active = true;
+        }
+        animador.SetActive(true);
+        if (currentNumber <= -0.5)
+        {
+            foreach (Collider co in colisão)
+            {
+                co.enabled = true;
+            }
+            if (currentNumber <= -0.99)
+            {
+                aparecer = false;
+                material.SetFloat("Boolean_f8cb18f941d444d7af7e8748be9c3d8f", 1);
+            }
+        }
     }
 }
